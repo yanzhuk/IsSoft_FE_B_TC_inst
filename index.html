@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
@@ -13,10 +13,32 @@
     <header> TC Instagram </header>
     <main>
         <aside></aside>
-        <section></section>
+        <section>
+            <form action="" id="register_form" class="active">
+                <h2>Register</h2>
+                <input type="text" name="username">
+                <input type="email" name="email">
+                <input type="password" name="password">
+                <input type="password" name="repeat_password">
+                <div class="form_actions">
+                    <button type="submit" class="btn btn_primary">Register</button>
+                    <button class="form_toggler">or log in</button>
+                </div>
+            </form>
+            <form action="" id="log_in_form">
+                <h2>Log In</h2>
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <div class="form_actions">
+                    <button type="submit" class="btn btn_primary">Log In</button>
+                    <button class="form_toggler">or register</button>
+                </div>
+            </form>
+        </section>
         <aside></aside>
     </main>
     <footer>© IsSoft</footer>
 </body>
+<script src="./script.js"></script>
 
 </html>

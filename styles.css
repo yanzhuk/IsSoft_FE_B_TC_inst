@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 html,
@@ -32,4 +33,90 @@ aside {
 
 section {
     flex: 4;
+    position: relative;
+}
+
+form {
+    display: none;
+    border: 1px solid #9d9d9d;
+    border-radius: 5px;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 300px;
+    width: 100%;
+}
+
+form h2 {
+    font-size: 28px;
+    margin: 0 0 25px;
+}
+
+form input {
+    width: 100%;
+    outline: none;
+    height: 40px;
+    border: 1px solid #9d9d9d;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+form.active {
+    display: block;
+}
+
+form .form_actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+form .form_actions>* {
+    margin: 0 10px;
+}
+
+.btn {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn_primary {
+    background-color: #b6307a;
+    color: #fff;
+}
+
+.btn_primary:hover {
+    background-color: #d581b0;
+}
+
+.form_toggler {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: #4c35e3;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+}
+
+.form_toggler::after {
+    position: absolute;
+    background-color: #4c35e3;
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: -5px;
+    left: 0;
+    transition: .3s;
+}
+
+.form_toggler:hover::after {
+    width: 100%;
 }
