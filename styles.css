@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    padding: 15px;
+    background-color: #b6307a;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    display: flex;
+}
+
+aside {
+    flex: 1;
+    background-color: #d581b0;
+}
+
+section {
+    flex: 4;
+}
