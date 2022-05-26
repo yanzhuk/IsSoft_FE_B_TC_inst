@@ -37,7 +37,6 @@ section {
 }
 
 form {
-    display: none;
     border: 1px solid #9d9d9d;
     border-radius: 5px;
     padding: 25px;
@@ -52,6 +51,17 @@ form {
 form h2 {
     font-size: 28px;
     margin: 0 0 25px;
+    text-align: center;
+}
+
+.formControl {
+    margin-bottom: 25px;
+}
+
+.formControl .errorMessage {
+    padding: 5px 0 0 15px;
+    font-size: 13px;
+    color: #ff8686;
 }
 
 form input {
@@ -60,11 +70,16 @@ form input {
     height: 40px;
     border: 1px solid #9d9d9d;
     border-radius: 5px;
-    margin-bottom: 25px;
+    padding-left: 15px;
+    font-size: 16px;
 }
 
-form.active {
-    display: block;
+form input.invalidValue {
+    border-color: #ff8686;
+}
+
+.view_disabled {
+    display: none;
 }
 
 form .form_actions {
