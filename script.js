@@ -84,7 +84,7 @@ function showView(viewName) {
     for (const prop in views) {
         if (prop === viewName) {
             views[prop].classList.remove('view_disabled');
-            break;
+            continue;
         };
         views[prop].classList.add('view_disabled');
     }
