@@ -19,7 +19,7 @@ const views = {
     'userPage': $userPage,
 }
 
-window.addEventListener('load', checkLoggedUser);
+document.addEventListener('DOMContentLoaded', checkLoggedUser);
 document.addEventListener('click', handleToggleAuthForms);
 document.addEventListener('click', handleRegister);
 document.addEventListener('click', handleLogIn);
