@@ -21,6 +21,7 @@ function loginUser({
     if (user && user.password === password) {
         localStorage.setItem('loggedUser', JSON.stringify({
             userName,
+            id: user.id,
             lastLogin: new Date().getTime(),
         }));
         return {

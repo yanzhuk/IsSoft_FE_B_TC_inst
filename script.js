@@ -7,7 +7,7 @@ import {
     validateForm
 } from './validation.js';
 
-const SESSION_LENGTH = 1 * 60 * 1000;
+const SESSION_LENGTH = 60 * 60 * 1000;
 
 const $registerForm = document.getElementById('register_form');
 const $logInForm = document.getElementById('log_in_form');
@@ -54,8 +54,16 @@ function handleViewUser(event) {
 
 function handleDeleteUser(event) {
     if (event.target.classList.contains('deleteUser')) {
-        DataService.deleteUserById(event.target.parentNode.dataset.userid);
+        const userId = event.target.parentNode.dataset.userid
+        const loggedUser = DataService.getLoggedUser();
+        
+        DataService.deleteUserById(userId);
         showView('usersListPage');
+        
+        if (userId === loggedUser.id) {
+            DataService.logOffUser();
+            showView('login');
+        }
     }
 }
 
