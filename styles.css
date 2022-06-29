@@ -34,6 +34,7 @@ aside {
 section {
     flex: 4;
     position: relative;
+    padding: 15px;
 }
 
 form {
@@ -100,11 +101,24 @@ form .form_actions>* {
     padding: 10px;
     cursor: pointer;
     transition: .3s;
+    min-width: 80px;
+    display: block;
+    margin: 0 7px;
+    transition: .3s;
 }
 
-.btn_primary {
+.btn_filled,
+.btn_outlined:hover {
+    border: 1px solid #b6307a;
     background-color: #b6307a;
     color: #fff;
+}
+
+.btn_outlined,
+.btn_filled:hover {
+    border: 1px solid #b6307a;
+    background-color: #fff;
+    color: #b6307a;
 }
 
 .btn_primary:hover {
@@ -134,4 +148,19 @@ form .form_actions>* {
 
 .form_toggler:hover::after {
     width: 100%;
+}
+
+.userPaper {
+    padding: 15px;
+    border: 1px solid #9d9d9d;
+    border-radius: 5px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userPaper_actions {
+    display: flex;
+    justify-content: space-between;
 }

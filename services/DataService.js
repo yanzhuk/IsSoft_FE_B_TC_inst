@@ -1,11 +1,14 @@
 function registerUser(userData) {
-    const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers'));
-
+    const registeredUsers = getAllUsers();
+    const newUser = {
+        ...userData,
+        id: new Date().getTime().toString(),
+    }
     if (registeredUsers) {
-        registeredUsers.push(userData);
+        registeredUsers.push(newUser);
         localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
     } else {
-        localStorage.setItem('registeredUsers', JSON.stringify([userData]));
+        localStorage.setItem('registeredUsers', JSON.stringify([newUser]));
     };
 }
 
@@ -34,18 +37,36 @@ function logOffUser() {
     localStorage.removeItem('loggedUser');
 }
 
-function getUserByName(name) {
+function getUserById(id) {
+    const registeredUsers = getAllUsers();
+    return registeredUsers.find(user => user.id === id);
+}
+
+function getUserByName(userName) {
     const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers'));
-    return registeredUsers.find(user => user.userName === name);
+    return registeredUsers.find(user => user.userName === userName);
 }
 
 function getLoggedUser() {
     return JSON.parse(localStorage.getItem('loggedUser'));
 }
 
+function getAllUsers() {
+    return JSON.parse(localStorage.getItem('registeredUsers'));
+}
+
+function deleteUserById(id) {
+    const users = getAllUsers();
+    const updatedUsers = users.filter(user => user.id !== id);
+    localStorage.setItem('registeredUsers', JSON.stringify(updatedUsers));
+}
+
 export default {
+    deleteUserById,
     registerUser,
     loginUser,
     getLoggedUser,
     logOffUser,
+    getAllUsers,
+    getUserById,
 }
