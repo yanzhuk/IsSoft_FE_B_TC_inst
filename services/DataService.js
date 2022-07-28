@@ -62,6 +62,21 @@ function deleteUserById(id) {
     localStorage.setItem('registeredUsers', JSON.stringify(updatedUsers));
 }
 
+function updateUserById(id, newUserData) {
+    const allUsers = getAllUsers();
+    const newUsersList = allUsers.map(
+        user =>
+            user.id === id
+                ? {
+                    ...user,
+                    ...newUserData,
+                }
+                : user
+    );
+
+    localStorage.setItem('registeredUsers', JSON.stringify(newUsersList));
+}
+
 export default {
     deleteUserById,
     registerUser,
@@ -70,4 +85,5 @@ export default {
     logOffUser,
     getAllUsers,
     getUserById,
+    updateUserById,
 }

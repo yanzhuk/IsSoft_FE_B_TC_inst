@@ -34,25 +34,44 @@ aside {
 section {
     flex: 4;
     position: relative;
-    padding: 15px;
 }
 
 form {
-    border: 1px solid #9d9d9d;
-    border-radius: 5px;
-    padding: 25px;
+    max-width: 305px;
+    width: 100%;
+    margin: 25px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 7px;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+.form-auth {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    max-width: 300px;
-    width: 100%;
+}
+
+h2 {
+    font-size: 28px;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
 }
 
 form h2 {
-    font-size: 28px;
     margin: 0 0 25px;
-    text-align: center;
 }
 
 .formControl {
@@ -65,14 +84,15 @@ form h2 {
     color: #ff8686;
 }
 
-form input {
+form input,
+form textarea {
     width: 100%;
     outline: none;
-    height: 40px;
     border: 1px solid #9d9d9d;
     border-radius: 5px;
-    padding-left: 15px;
+    padding: 10px 15px;
     font-size: 16px;
+    resize: none;
 }
 
 form input.invalidValue {
@@ -84,10 +104,7 @@ form input.invalidValue {
 }
 
 form .form_actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    margin: 0 -10px;
 }
 
 form .form_actions>* {
@@ -151,16 +168,32 @@ form .form_actions>* {
 }
 
 .userPaper {
-    padding: 15px;
+    margin: 15px;
+}
+
+.userDetails {}
+
+.userDetails-header {}
+
+.bordered-container {
     border: 1px solid #9d9d9d;
     border-radius: 5px;
-    margin: 15px;
+    padding: 25px;
+    margin: 25px;
+}
+
+.flex {
     display: flex;
+}
+
+.align-center {
     align-items: center;
+}
+
+.space-between {
     justify-content: space-between;
 }
 
-.userPaper_actions {
-    display: flex;
-    justify-content: space-between;
+.justify-end {
+    justify-content: end;
 }
