@@ -1,5 +1,6 @@
 # IsSoft_FE_B_TC_inst
 
-# L4
+# L5
 
-Ability to add some more info about logged user
+Add routing, should stay on the current page after reload.
+Class based views
