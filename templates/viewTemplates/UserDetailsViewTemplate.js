@@ -1,4 +1,3 @@
-
 export function UserDetailsViewTemplate(
     {
         id: userId,

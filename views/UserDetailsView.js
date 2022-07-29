@@ -1,7 +1,7 @@
 import { BaseView } from './index.js';
 import { UserDetailsViewTemplate } from '../templates/viewTemplates/index.js';
 import { UserEditFormTemplate } from '../templates/componentTemplates/index.js';
-import { getFormElementValue, clearForm } from '../helpers.js'
+import { getFormElementValue } from '../helpers.js'
 import { goTo, ROUTES_ENUM } from '../router.js';
 
 class UserDetailsView extends BaseView {
