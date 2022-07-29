@@ -39,7 +39,6 @@ section {
 form {
     max-width: 305px;
     width: 100%;
-    margin: 25px;
 }
 
 ul {
@@ -142,6 +141,21 @@ form .form_actions>* {
     background-color: #d581b0;
 }
 
+.btn-icon {
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.btn-icon--settings {
+    background-image: url(./assets/icons/settings.png);
+}
+
 .form_toggler {
     font-size: 16px;
     background-color: transparent;
@@ -179,6 +193,9 @@ form .form_actions>* {
     border: 1px solid #9d9d9d;
     border-radius: 5px;
     padding: 25px;
+}
+
+.indent {
     margin: 25px;
 }
 
