@@ -10,6 +10,16 @@ export class BaseView {
         this.addEventListeners();
     }
 
+    dispatchRouterEvent(actionName, param = '') {
+        this.container.dispatchEvent(new CustomEvent('RouterEvent', {
+            bubbles: true,
+            detail: {
+                actionName,
+                param,
+            }
+        }));
+    };
+
     getData(params) {
         return params;
     }

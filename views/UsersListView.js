@@ -1,6 +1,5 @@
 import { BaseView } from './index.js';
 import { UserPaperComponent } from '../components/index.js';
-import { goTo, ROUTES_ENUM } from '../router.js';
 
 class UsersListView extends BaseView {
     constructor(viewName) {
@@ -14,7 +13,7 @@ class UsersListView extends BaseView {
 
     handleViewUser(event) {
         if (event.target.classList.contains('viewUser')) {
-            goTo(`${ROUTES_ENUM.user}/${event.target.parentNode.dataset.userid}`);
+            this.dispatchRouterEvent('toUserPage', event.target.parentNode.dataset.userid)
         }
     }
 
@@ -24,11 +23,11 @@ class UsersListView extends BaseView {
             const loggedUser = this.DataService.getLoggedUser();
 
             this.DataService.deleteUserById(userId);
-            goTo(ROUTES_ENUM.usersList);
+            this.dispatchRouterEvent('toUserList');
 
             if (userId === loggedUser.id) {
                 this.DataService.logOffUser();
-                goTo(ROUTES_ENUM.auth);
+                this.dispatchRouterEvent('toRegisterForm');
             }
         }
     }

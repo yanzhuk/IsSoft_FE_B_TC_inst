@@ -2,7 +2,6 @@ import { BaseView } from './index.js';
 import { UserDetailsViewTemplate } from '../templates/viewTemplates/index.js';
 import { UserEditFormTemplate } from '../templates/componentTemplates/index.js';
 import { getFormElementValue } from '../helpers.js'
-import { goTo, ROUTES_ENUM } from '../router.js';
 
 class UserDetailsView extends BaseView {
     editUserFormShown = false;
@@ -24,7 +23,7 @@ class UserDetailsView extends BaseView {
     handleLogOff(event) {
         if (event.target.id === "logOffUser") {
             this.DataService.logOffUser();
-            goTo(ROUTES_ENUM.auth);
+            this.dispatchRouterEvent('toLoginForm');
         }
     }
 

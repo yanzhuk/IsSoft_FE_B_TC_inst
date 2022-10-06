@@ -11,9 +11,9 @@ document.addEventListener('submit', (e) => e.preventDefault());
 function checkLoggedUser() {
     const loggedUser = DataService.getLoggedUser();
     if (!loggedUser || new Date().getTime() - loggedUser.lastLogin > SESSION_LENGTH) {
-        goTo(ROUTES_ENUM.auth);
+        goTo(ROUTES_ENUM.login);
         DataService.logOffUser();
     } else {
-        goTo(window.location.hash || ROUTES_ENUM.usersList);
+        goTo(ROUTES_ENUM.usersList);
     }
 }
