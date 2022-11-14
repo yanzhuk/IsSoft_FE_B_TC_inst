@@ -1,8 +1,6 @@
 import { BaseView } from './index.js';
 import { LoginViewTemplate } from '../templates/viewTemplates/index.js';
 import { getFormElementValue } from '../helpers.js';
-import { goTo, ROUTES_ENUM } from '../router.js';
-
 class LoginView extends BaseView {
     constructor() {
         super('loginView');
